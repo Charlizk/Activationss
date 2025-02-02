@@ -1,0 +1,173 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur du formulaire */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titre */
+h1 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Champs de formulaire */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Message */
+#message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Compteur de caractères */
+#charCount {
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Pop-up de confirmation */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+}
+
+.popup button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour l'illustration 3D de transfert d'argent */
+.illustration {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Style pour les images de cartes de crédit */
+.credit-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.credit-card {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.credit-card:hover {
+    transform: scale(1.1);
+}
