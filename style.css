@@ -188,15 +188,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Style pour l'image en haut */
-.top-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
 /* Media Queries pour mobile */
 @media (max-width: 768px) {
     .header__heading-text {
