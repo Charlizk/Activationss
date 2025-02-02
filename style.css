@@ -189,23 +189,26 @@ body {
 /* Style pour la galerie d'images */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Taille de base des images */
+    gap: 20px; /* Espacement entre les images */
     width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
+    max-width: 1200px; /* Largeur maximale de la galerie */
+    margin: 20px auto; /* Centrer la galerie */
+    padding: 0 20px; /* Espacement sur les côtés */
 }
 
 .gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Largeur de l'image à 100% de la cellule */
+    height: 200px; /* Hauteur fixe pour toutes les images */
+    object-fit: cover; /* Redimensionne l'image pour couvrir la zone sans déformation */
+    border-radius: 10px; /* Coins arrondis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Légère mise à l'échelle au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
 }
 
 /* Media Queries pour mobile */
@@ -221,5 +224,16 @@ body {
 
     .gallery {
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+        gap: 10px; /* Espacement réduit sur mobile */
+    }
+
+    .gallery img {
+        height: 150px; /* Hauteur réduite sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 colonne sur très petits écrans */
     }
 }
