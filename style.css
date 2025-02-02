@@ -12,11 +12,11 @@ body {
     line-height: 1.6;
 }
 
-/* Style pour le logo et le titre */
+/* Style pour le logo animé */
 .logo-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -28,15 +28,21 @@ body {
 }
 
 .logo {
-    width: 50px; /* Taille du logo */
-    height: auto;
-    margin-right: 10px;
-}
-
-.logo-text {
     font-size: 24px;
     font-weight: bold;
-    color: #28a745; /* Couleur verte */
+    background: linear-gradient(90deg, #3498db, #2ecc71, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Style pour l'icône hamburger */
@@ -203,7 +209,7 @@ body {
 
 /* Media Queries pour mobile */
 @media (max-width: 768px) {
-    .logo-text {
+    .logo {
         font-size: 20px;
     }
 
