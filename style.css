@@ -1,160 +1,122 @@
-/* Style général */
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Style pour chaque page */
+.page {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style pour l'en-tête */
+.header {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.header__heading-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Style pour l'icône hamburger */
+.icon-hamburger {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Style pour le menu déroulant */
+.menu {
+    display: none;
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-/* Conteneur du formulaire */
-.container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    animation: fadeIn 0.5s ease-out;
-}
-
-/* Animation d'apparition */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Titre */
-h1 {
-    font-size: 24px;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-/* Labels */
-label {
-    display: block;
-    text-align: left;
-    margin-bottom: 8px;
-    font-weight: bold;
+.menu ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
     color: #333;
 }
 
-/* Champs de formulaire */
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+.menu ul li:hover {
+    background-color: #f4f4f9;
 }
 
-input:focus, select:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+/* Style pour le formulaire */
+#couponForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 300px;
 }
 
-/* Bouton */
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
+#couponForm label {
     font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Message */
-#message {
-    margin-top: 20px;
+    color: #2c3e50;
     font-size: 14px;
-    color: #333;
 }
 
-/* Compteur de caractères */
-#charCount {
-    text-align: right;
-    font-size: 12px;
-    color: #666;
-    margin-top: -10px;
-    margin-bottom: 20px;
+#couponForm input,
+#couponForm select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Pop-up de confirmation */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.popup.show {
-    display: block;
-    opacity: 1;
-}
-
-.popup button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
+#couponForm button {
+    padding: 8px;
+    background-color: #3498db;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
 }
 
-.popup button:hover {
-    background-color: #0056b3;
+#couponForm button:hover {
+    background-color: #2980b9;
 }
 
-/* Style pour l'illustration 3D de transfert d'argent */
-.illustration {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 20px;
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Animation de flottement */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Style pour les images de cartes de crédit */
+/* Style pour les cartes de crédit */
 .credit-cards {
     display: flex;
     justify-content: center;
@@ -162,12 +124,91 @@ button:hover {
     margin-top: 20px;
 }
 
-.credit-card {
-    width: 50px;
+.credit-cards img {
+    max-width: 40px;
     height: auto;
-    transition: transform 0.3s ease;
 }
 
-.credit-card:hover {
-    transform: scale(1.1);
+/* Style pour le message */
+#message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* Style pour la pop-up de confirmation */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup button:hover {
+    background-color: #2980b9;
+}
+
+/* Style pour la galerie d'images */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour l'image en haut */
+.top-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+    .header__heading-text {
+        font-size: 18px;
+    }
+
+    #couponForm {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur mobile */
+    }
 }

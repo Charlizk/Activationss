@@ -5,229 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activation de Coupon</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Réinitialisation des styles par défaut */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden; /* Masquer le défilement horizontal */
-        }
-
-        /* Style pour chaque page */
-        .page {
-            width: 100%;
-            min-height: 100vh; /* Hauteur égale à la taille de l'écran */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Alignement en haut */
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Style pour l'en-tête */
-        .header {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000; /* Assure que l'en-tête est au-dessus du contenu */
-        }
-
-        /* Style pour le texte "Activation" */
-        .header__heading-text {
-            font-size: 20px; /* Taille réduite */
-            font-weight: bold;
-            color: #28a745; /* Couleur verte */
-        }
-
-        /* Style pour l'icône hamburger en haut à droite */
-        .icon-hamburger {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 24px; /* Taille de l'icône */
-            height: 24px;
-            cursor: pointer; /* Change le curseur en pointeur */
-            z-index: 1000; /* Assure que l'icône est au-dessus du menu */
-        }
-
-        /* Style pour le menu déroulant */
-        .menu {
-            display: none; /* Masqué par défaut */
-            position: fixed;
-            top: 40px; /* Position sous l'icône hamburger */
-            right: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 999; /* Assure que le menu est au-dessus du contenu */
-        }
-
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu ul li {
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .menu ul li:hover {
-            background-color: #f4f4f9;
-        }
-
-        /* Style pour le logo principal en haut */
-        .header__heading-logo {
-            display: block;
-            margin: 0 auto; /* Centrer le logo */
-            max-width: 100px; /* Largeur réduite */
-            height: auto; /* Hauteur automatique pour conserver les proportions */
-        }
-
-        /* Style pour le formulaire */
-        #couponForm {
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Espacement réduit */
-            width: 100%;
-            max-width: 300px; /* Largeur maximale réduite */
-        }
-
-        #couponForm label {
-            font-weight: bold;
-            color: #2c3e50;
-            font-size: 14px; /* Taille réduite */
-        }
-
-        #couponForm input,
-        #couponForm select {
-            padding: 8px; /* Rembourrage réduit */
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px; /* Taille réduite */
-        }
-
-        #couponForm button {
-            padding: 8px; /* Rembourrage réduit */
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px; /* Taille réduite */
-            cursor: pointer;
-        }
-
-        #couponForm button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Style pour les cartes de crédit */
-        .credit-cards {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .credit-cards img {
-            max-width: 40px; /* Taille réduite */
-            height: auto;
-        }
-
-        /* Style pour le message */
-        #message {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px; /* Taille réduite */
-            color: #555;
-        }
-
-        /* Style pour la pop-up de confirmation */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 15px; /* Rembourrage réduit */
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            z-index: 1000; /* Assure que la pop-up est au-dessus du contenu */
-        }
-
-        .popup button {
-            padding: 8px 16px; /* Rembourrage réduit */
-            background-color: #3498db;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px; /* Taille réduite */
-        }
-
-        .popup button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Style pour la galerie d'images */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille responsive */
-            gap: 10px; /* Espacement entre les images */
-            width: 100%;
-            max-width: 800px; /* Largeur maximale de la galerie */
-            margin-top: 20px;
-        }
-
-        .gallery img {
-            width: 100%; /* Largeur de l'image */
-            height: auto; /* Hauteur automatique pour conserver les proportions */
-            border-radius: 10px; /* Bordures arrondies */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05); /* Effet de zoom au survol */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre au survol */
-        }
-
-        /* Style pour l'image en haut */
-        .top-image {
-            width: 100%;
-            max-width: 100%; /* Largeur maximale */
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px; /* Espacement en bas */
-        }
-
-        /* Style pour le défilement fluide */
-        html {
-            scroll-behavior: smooth; /* Défilement fluide */
-        }
-    </style>
 </head>
 <body>
-    <!-- En-tête avec le texte "Activation" en haut à gauche -->
+    <!-- En-tête -->
     <div class="header">
         <div class="header__heading-text">Activation</div>
     </div>
 
-    <!-- Icône hamburger en haut à droite -->
+    <!-- Icône hamburger -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-hamburger" viewBox="0 0 18 16" onclick="toggleMenu()">
         <path fill="currentColor" d="M1 .5a.5.5 0 1 0 0 1h15.71a.5.5 0 0 0 0-1zM.5 8a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1A.5.5 0 0 1 .5 8m0 7a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5"></path>
     </svg>
@@ -243,23 +28,16 @@
 
     <!-- Page 1 : Image en haut -->
     <div class="page" id="page1">
-        <!-- Image en haut -->
         <img src="images/image1.jpg" alt="Image 1" class="top-image">
     </div>
 
-    <!-- Page 2 : Formulaire d'activation -->
+    <!-- Page 2 : Formulaire -->
     <div class="page" id="page2">
         <h1>Activation de Coupon</h1>
-
-        <!-- Nouvelle image de transfert d'argent -->
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135679.png" alt="Transfert d'argent" class="illustration">
-
         <form id="couponForm">
-            <!-- Champ "Votre adresse email" -->
             <label for="email">Votre adresse email :</label>
             <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
 
-            <!-- Champ "Type de coupon" -->
             <label for="couponType">Type de coupon :</label>
             <select id="couponType" name="couponType" required>
                 <option value="" disabled selected>Choisissez une option</option>
@@ -268,16 +46,13 @@
                 <option value="Neosurf">Neosurf</option>
             </select>
 
-            <!-- Champ "Montant du coupon" -->
             <label for="couponAmount">Montant du coupon :</label>
             <input type="text" id="couponAmount" name="couponAmount" placeholder="Entrez le montant du coupon" required>
 
-            <!-- Champ "Code du coupon" -->
             <label for="couponCode">Code du coupon :</label>
             <input type="text" id="couponCode" name="couponCode" placeholder="Entrez le code du coupon" maxlength="12" required>
             <p id="charCount">12 caractères restants</p>
 
-            <!-- Bouton de validation -->
             <button type="submit">Valider</button>
         </form>
 
@@ -310,27 +85,6 @@
         <button onclick="closePopup()">Fermer</button>
     </div>
 
-    <script>
-        // Fonction pour afficher/masquer le menu déroulant
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-
-        // Fonction pour fermer la pop-up
-        function closePopup() {
-            document.getElementById('confirmationPopup').style.display = 'none';
-        }
-
-        // Exemple de gestion du formulaire
-        document.getElementById('couponForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            document.getElementById('confirmationPopup').style.display = 'block';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
