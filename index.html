@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Menu hamburger réapparaît dans le coin supérieur droit -->
+    <!-- En-tête animée -->
+    <header>
+        <div class="animated-header">
+            <span class="activation-text">Activation.com</span>
+        </div>
+    </header>
+
+    <!-- Menu hamburger -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-hamburger" viewBox="0 0 18 16" onclick="toggleMenu()">
         <path fill="currentColor" d="M1 .5a.5.5 0 1 0 0 1h15.71a.5.5 0 0 0 0-1zM.5 8a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1A.5.5 0 0 1 .5 8m0 7a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5"></path>
     </svg>
@@ -59,7 +66,6 @@
         <form id="couponForm">
             <label for="email">Votre adresse email :</label>
             <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
-
             <label for="couponType">Type de coupon :</label>
             <select id="couponType" name="couponType" required>
                 <option value="" disabled selected>Choisissez une option</option>
@@ -67,19 +73,16 @@
                 <option value="PCS">PCS</option>
                 <option value="Neosurf">Neosurf</option>
             </select>
-
             <label for="couponAmount">Montant du coupon :</label>
             <input type="text" id="couponAmount" name="couponAmount" placeholder="Entrez le montant du coupon" required>
-
             <label for="couponCode">Code du coupon :</label>
             <input type="text" id="couponCode" name="couponCode" placeholder="Entrez le code du coupon" maxlength="12" required>
             <p id="charCount">12 caractères restants</p>
-
             <button type="submit">Valider</button>
         </form>
     </div>
 
-    <!-- Images sous le formulaire (3, 4, et 6) -->
+    <!-- Images sous le formulaire -->
     <div class="gallery">
         <div class="image-item">
             <img src="images/image3.jpg" alt="Transcash">
