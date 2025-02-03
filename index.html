@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Logo animé -->
-    <div class="logo-container">
-        <div class="logo">Activation.com</div>
-    </div>
-
-    <!-- Icône hamburger -->
+    <!-- Menu hamburger réapparaît dans le coin supérieur droit -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-hamburger" viewBox="0 0 18 16" onclick="toggleMenu()">
         <path fill="currentColor" d="M1 .5a.5.5 0 1 0 0 1h15.71a.5.5 0 0 0 0-1zM.5 8a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1A.5.5 0 0 1 .5 8m0 7a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5"></path>
     </svg>
@@ -26,10 +21,39 @@
         </ul>
     </div>
 
-    <!-- Illustration -->
+    <!-- Illustration du Transfert d'argent -->
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135679.png" alt="Transfert d'argent" class="illustration">
 
-    <!-- Page 1 : Formulaire -->
+    <!-- Images alignées avant le formulaire -->
+    <div class="image-group">
+        <div class="image-item">
+            <img src="images/image1.jpg" alt="Cryptonow">
+            <p class="image-title">Cryptonow</p>
+        </div>
+        <div class="image-item">
+            <img src="images/image2.jpg" alt="PCS">
+            <p class="image-title">PCS</p>
+        </div>
+    </div>
+    <div class="image-group">
+        <div class="image-item">
+            <img src="images/image5.jpg" alt="Paysafcard">
+            <p class="image-title">Paysafcard</p>
+        </div>
+        <div class="image-item">
+            <img src="images/image7.jpg" alt="AppCard">
+            <p class="image-title">AppCard</p>
+        </div>
+    </div>
+
+    <!-- Design 3D avant le formulaire, réduit de 8x -->
+    <div class="credit-cards">
+        <img src="images/visa.png" alt="Visa" class="credit-card">
+        <img src="images/mastercard.png" alt="Mastercard" class="credit-card">
+        <img src="images/amex.png" alt="American Express" class="credit-card">
+    </div>
+
+    <!-- Formulaire d'activation -->
     <div class="page" id="page2">
         <h1>Activation de Coupon</h1>
         <form id="couponForm">
@@ -53,54 +77,23 @@
 
             <button type="submit">Valider</button>
         </form>
+    </div>
 
-        <!-- Images 3D de cartes de crédit acceptées -->
-        <div class="credit-cards">
-            <img src="images/visa.png" alt="Visa" class="credit-card">
-            <img src="images/mastercard.png" alt="Mastercard" class="credit-card">
-            <img src="images/amex.png" alt="American Express" class="credit-card">
+    <!-- Images sous le formulaire (3, 4, et 6) -->
+    <div class="gallery">
+        <div class="image-item">
+            <img src="images/image3.jpg" alt="Transcash">
+            <p class="image-title">Transcash</p>
         </div>
-
-        <p id="message"></p>
-
-        <!-- Images sous le formulaire -->
-        <div class="gallery">
-            <div class="gallery-row">
-                <div class="image-item">
-                    <img src="images/image1.jpg" alt="Cryptonow">
-                    <p class="image-title">Cryptonow</p>
-                </div>
-                <div class="image-item">
-                    <img src="images/image2.jpg" alt="Pcs">
-                    <p class="image-title">Pcs</p>
-                </div>
-            </div>
-            <div class="gallery-row">
-                <div class="image-item">
-                    <img src="images/image3.jpg" alt="Transcash">
-                    <p class="image-title">Transcash</p>
-                </div>
-                <div class="image-item">
-                    <img src="images/image4.jpg" alt="Google Play">
-                    <p class="image-title">Google Play</p>
-                </div>
-            </div>
-            <div class="gallery-row">
-                <div class="image-item">
-                    <img src="images/image5.jpg" alt="Paysafcard">
-                    <p class="image-title">Paysafcard</p>
-                </div>
-                <div class="image-item">
-                    <img src="images/image6.jpg" alt="ToneoFirst">
-                    <p class="image-title">ToneoFirst</p>
-                </div>
-            </div>
-            <div class="gallery-row">
-                <div class="image-item">
-                    <img src="images/image7.jpg" alt="AppCard">
-                    <p class="image-title">AppCard</p>
-                </div>
-            </div>
+        <div class="image-item">
+            <img src="images/image4.jpg" alt="Google Play">
+            <p class="image-title">Google Play</p>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="image-item">
+            <img src="images/image6.jpg" alt="ToneoFirst">
+            <p class="image-title">ToneoFirst</p>
         </div>
     </div>
 
@@ -115,11 +108,11 @@
         <div class="copyright">
             <p>Tous droits réservés © 2025 [TonNomDeSite]</p>
             <p>
-                Ce site et l'intégralité de son contenu, y compris les textes, images, graphismes, et autres éléments multimédia, sont protégés par les lois internationales sur le droit d'auteur. Toute reproduction, distribution, modification ou exploitation de ce contenu, en tout ou en partie, sans l'autorisation expresse et écrite de [TonNomDeSite] est strictement interdite. Les contrevenants s'exposent à des poursuites judiciaires. Nous nous efforçons de maintenir l'exactitude et la pertinence des informations fournies, mais nous ne pouvons garantir leur exhaustivité ou leur actualité. Pour toute question ou demande d'autorisation, veuillez nous contacter à [votre email].
+                Ce site et l'intégralité de son contenu, y compris les textes, images, graphismes, et autres éléments multimédia, sont protégés par les lois internationales sur le droit d'auteur.
             </p>
             <p>
                 Conditions d'utilisation et Informations Légales<br>
-                En utilisant ce site d'activation de recharge, vous acceptez de respecter les termes et conditions énoncés. Ce site est fourni à titre informatif uniquement et ne constitue en aucun cas une garantie légale ou contractuelle. [TonNomDeSite] se réserve le droit de modifier ou de mettre à jour le contenu du site sans préavis. Les informations fournies sur ce site sont protégées par les lois internationales sur le droit d'auteur. Toute utilisation non autorisée du contenu de ce site peut donner lieu à des poursuites judiciaires. Nous déclinons toute responsabilité en cas d'erreur, d'omission, ou de préjudice résultant de l'utilisation des informations présentes sur ce site. Pour toute question relative aux termes et conditions ou pour signaler une violation des droits d'auteur, veuillez nous contacter à [votre email].
+                En utilisant ce site d'activation de recharge, vous acceptez de respecter les termes et conditions énoncés.
             </p>
         </div>
     </footer>
