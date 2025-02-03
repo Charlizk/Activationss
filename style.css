@@ -68,9 +68,12 @@ header {
 /* Illustration du Transfert d'argent */
 .illustration {
     display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
+    width: 200px; /* Taille rendue (rendered size) */
+    height: 200px; /* Taille rendue (rendered size) */
+    object-fit: cover; /* Pour éviter la déformation */
+    margin: 20px auto; /* Centrer l'image */
+    border-radius: 8px; /* Coins arrondis */
+    border: 1px solid #ddd; /* Bordure légère */
 }
 
 /* Menu hamburger */
@@ -244,6 +247,11 @@ footer p {
 
 /* Media Queries pour iPhone 12 Pro (390px de largeur) */
 @media (max-width: 390px) {
+    .illustration {
+        width: 150px; /* Taille réduite pour les petits écrans */
+        height: 150px; /* Taille réduite pour les petits écrans */
+    }
+
     .image-item {
         width: calc(50% - 10px); /* 2 images par ligne avec un espace de 10px */
     }
