@@ -5,28 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activation de Coupon</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- En-tête animée -->
-    <header>
-        <div class="animated-header">
-            <span class="activation-text">Activation.com</span>
+    <!-- Nouvel en-tête -->
+    <header class="main-header">
+        <!-- Logo + Nom -->
+        <div class="brand">
+            <img src="logo.png" alt="Activation.com" class="logo">
+            <span class="site-name">ACTIVATION</span>
+        </div>
+
+        <!-- Navigation Desktop -->
+        <nav class="nav-links">
+            <a href="#achat">Acheter</a>
+            <a href="#activation">Activer</a>
+            <a href="#support">Support</a>
+        </nav>
+
+        <!-- Bouton CTA -->
+        <button class="cta-button">
+            <i class="fas fa-wallet"></i>
+            Mon Portefeuille
+        </button>
+
+        <!-- Menu Mobile -->
+        <div class="mobile-menu">
+            <i class="fas fa-bars" onclick="toggleMobileMenu()"></i>
+            <div class="dropdown-menu" id="mobileDropdown">
+                <a href="#achat">Acheter</a>
+                <a href="#activation">Activer</a>
+                <a href="#support">Support</a>
+            </div>
         </div>
     </header>
-
-    <!-- Menu hamburger -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-hamburger" viewBox="0 0 18 16" onclick="toggleMenu()">
-        <path fill="currentColor" d="M1 .5a.5.5 0 1 0 0 1h15.71a.5.5 0 0 0 0-1zM.5 8a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1A.5.5 0 0 1 .5 8m0 7a.5.5 0 0 1 .5-.5h15.71a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5"></path>
-    </svg>
-
-    <!-- Menu déroulant -->
-    <div class="menu" id="menu">
-        <ul>
-            <li onclick="alert('Option 1 sélectionnée : Acheter ma carte')">Acheter ma carte</li>
-            <li onclick="alert('Option 2 sélectionnée : Activer ma carte')">Activer ma carte</li>
-            <li onclick="alert('Option 3 sélectionnée : Nous contacter')">Nous contacter</li>
-        </ul>
-    </div>
 
     <!-- Images alignées avant le formulaire -->
     <div class="image-group">
