@@ -74,6 +74,8 @@ header {
     margin: 20px auto; /* Centrer l'image */
     border-radius: 8px; /* Coins arrondis */
     border: 1px solid #ddd; /* Bordure légère */
+    margin-bottom: -85px;
+    position: relative;
 }
 
 /* Menu hamburger */
