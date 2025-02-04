@@ -43,3 +43,51 @@ document.getElementById('couponCode').addEventListener('input', function () {
     const remainingChars = 12 - this.value.length;
     charCount.textContent = `${remainingChars} caractères restants`;
 });
+
+// Fonction pour faire défiler la page jusqu'au formulaire
+function scrollToForm() {
+    const form = document.getElementById('couponForm');
+    form.scrollIntoView({ behavior: 'smooth' }); // Défilement fluide
+}
+
+// Fonction pour sélectionner une option dans le menu déroulant
+function selectCouponType(value) {
+    const couponType = document.getElementById('couponType');
+    couponType.value = value; // Sélectionne l'option correspondante
+}
+
+// Ajouter des écouteurs d'événements aux images
+document.getElementById('image1').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('Cryptonow');
+});
+
+document.getElementById('image2').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('PCS');
+});
+
+document.getElementById('image3').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('Transcash');
+});
+
+document.getElementById('image4').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('Google Play');
+});
+
+document.getElementById('image5').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('Paysafcard');
+});
+
+document.getElementById('image6').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('ToneoFirst');
+});
+
+document.getElementById('image7').addEventListener('click', function () {
+    scrollToForm();
+    selectCouponType('AppCard');
+});
